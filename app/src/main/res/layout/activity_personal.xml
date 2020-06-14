@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".personalActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ABC9BCEA"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fanhui" />
+
+        <ImageView
+            android:layout_width="262dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/grzxtit" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="143dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/my_theme"
+                android:gravity="center"
+                android:textColor="#589ED6"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bluecorner"
+                android:text="我的主题"
+                android:textSize="25sp" />
+            <Button
+                android:layout_width="143dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/my_answer"
+                android:gravity="center"
+                android:textColor="#589ED6"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bluecorner"
+                android:text="我的留言"
+                android:textSize="25sp" />
+            <Button
+                android:layout_width="143dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/answer_me"
+                android:gravity="center"
+                android:textColor="#589ED6"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bluecorner"
+                android:text="回复我的"
+                android:textSize="25sp" />
+        </LinearLayout>
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <fragment-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:id="@+id/fragment"-->
+<!--                android:name="com.example.discuss.mywords" />-->
+<!--        </FrameLayout>-->
+        <ListView
+            android:id="@+id/privatelist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+</LinearLayout>

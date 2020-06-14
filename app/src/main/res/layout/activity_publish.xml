@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".publishActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ABC9BCEA"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fanhui" />
+
+        <ImageView
+            android:layout_width="262dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/fbtl" />
+
+        <ImageButton
+            android:id="@+id/publish"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/wancheng" />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/course"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="请在这里输入课程"
+        android:textSize="27sp"
+        />
+
+    <EditText
+            android:id="@+id/discussTitle"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="请在这里输入讨论标题"
+            android:textSize="27sp"
+            />
+    
+    <EditText
+        android:id="@+id/discussContent"
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/discussinput"
+        />
+</LinearLayout>

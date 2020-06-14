@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chooseDefinitionActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ABC9BCEA"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/grzx"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/grzx" />
+
+        <ImageView
+
+            android:layout_width="262dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/fb"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tianxie" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="400px"
+            android:layout_height="400px"
+            android:layout_margin="50dp"
+            android:src="@drawable/stu" />
+
+        <Button
+            android:id="@+id/amStu"
+            android:layout_marginTop="80dp"
+            android:layout_width="160dp"
+            android:layout_height="200px"
+            android:background="@drawable/corner"
+            android:text="我是学生"
+            android:textColor="#FBFBFB"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="400px"
+            android:layout_height="400px"
+            android:layout_margin="50dp"
+            android:src="@drawable/tea" />
+
+        <Button
+            android:id="@+id/amTea"
+            android:layout_marginTop="80dp"
+            android:layout_width="160dp"
+            android:layout_height="200px"
+            android:background="@drawable/corner"
+            android:text="我是老师"
+            android:textColor="#FBFBFB"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">discuss</string>
+    <string name="number">  请输入学号</string>
+    <string name="nickname">  请为输入姓名</string>
+    <string name="password">  请输入密码</string>
+    <string name="password2">  请再次输入密码</string>
+    <string name="login">登录</string>
+    <string name="resign">注册</string>
+
+</resources>

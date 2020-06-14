@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ABC9BCEA"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/grzx"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/grzx" />
+
+        <ImageView
+
+            android:layout_width="262dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/fb"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tianxie" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/graycorner"
+        android:gravity="center_horizontal"
+        android:hint="请输入搜索内容"
+        android:textSize="25sp" />
+
+    <Spinner
+        android:id="@+id/order"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:entries="@array/orderrules" />
+
+    <ListView
+        android:id="@+id/talklist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
