@@ -7,6 +7,7 @@
     android:descendantFocusability="blocksDescendants">
 <LinearLayout
     android:layout_marginTop="15dp"
+    android:paddingLeft="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -21,14 +22,16 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/nickName"
-            android:background="#FFEB3B"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
             android:textColor="#000000"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/publishTime"
-            android:background="#2196F3"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
             android:textColor="#000000"
             android:textSize="15sp"
             android:layout_width="wrap_content"
@@ -39,64 +42,77 @@
         android:id="@+id/theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
+        android:textColor="#3F51B5"
         android:textSize="30sp"
         android:textStyle="bold"/>
-    <LinearLayout
-        android:layout_marginBottom="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <ImageButton
-        android:id="@+id/thumbUp"
-        android:onClick="onClick"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="60dp"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        android:src="@drawable/dianzan" />
-        <TextView
-            android:id="@+id/thumbUpNum"
-            android:background="#47B9C8"
-            android:textSize="17sp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:orientation="horizontal">
+            <!--            -->
+            <ImageButton
+                android:id="@+id/thumbUp"
+                android:onClick="onClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dianzan" />
+            <TextView
+                android:id="@+id/thumbUpNum"
+                android:background="@drawable/dialog"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <!--        android:onClick="onClick"-->
+            <ImageButton
+                android:id="@+id/answer"
+                android:onClick="onClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/huifu" />
+            <TextView
+                android:id="@+id/answerNum"
+                android:background="@drawable/dialog"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <!--        android:onClick="onClick"-->
+            <ImageButton
+                android:id="@+id/send"
+                android:onClick="onClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/zhuanfa" />
+            <TextView
+                android:id="@+id/zhuanNum"
+                android:background="@drawable/dialog"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/answer"
-            android:onClick="onClick"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="60dp"
-            android:background="#00000000"
-            android:scaleType="fitCenter"
-            android:src="@drawable/huifu" />
-        <TextView
-            android:id="@+id/answerNum"
-            android:background="#9C27B0"
-            android:textSize="17sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
-
-        <ImageButton
-            android:id="@+id/send"
-            android:onClick="onClick"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="60dp"
-            android:background="#00000000"
-            android:scaleType="fitCenter"
-            android:src="@drawable/zhuanfa" />
-        <TextView
-            android:id="@+id/zhuanNum"
-            android:background="#673AB7"
-            android:textSize="17sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
     </LinearLayout>
-</LinearLayout>
+

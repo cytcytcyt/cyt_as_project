@@ -8,63 +8,64 @@
     android:visibility="visible">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:background="#CFEFFD"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
-
-        <EditText
-            android:id="@+id/et_answer"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="30dp"
-            android:background="#B8E9FE"
-            android:gravity="center_vertical"
-            android:hint="输入回复内容"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textSize="14sp" />
-
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="280dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dialog"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
 
+            <EditText
+                android:id="@+id/et_answer"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/discussinput"
+                android:gravity="center_vertical"
+                android:hint="输入回复内容"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="14sp" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
             <Button
                 android:id="@+id/publish_cancel"
                 android:layout_width="110dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/corner"
                 android:gravity="center"
                 android:text="取消"
                 android:textColor="#FAF6F6"
-                android:textSize="16sp"></Button>
-
+                android:textSize="16sp" >
+            </Button>
             <Button
                 android:id="@+id/publish_answer"
                 android:layout_width="110dp"
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/corner"
                 android:gravity="center"
                 android:text="回复"
                 android:textColor="#FAF6F6"
-                android:textSize="16sp"></Button>
+                android:textSize="16sp" >
+            </Button>
         </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
+
 
 
 </LinearLayout>

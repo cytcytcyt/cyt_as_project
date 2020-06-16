@@ -34,7 +34,7 @@ public class answerMeAdapter extends ArrayAdapter<Answer> {
         TextView theme=(TextView) view.findViewById(R.id.theme);
         TextView content=(TextView) view.findViewById(R.id.content);
 
-        touXiang.setImageResource(R.drawable.stu);
+        touXiang.setImageResource(R.drawable.photo);
         publisher.setText(answer.getNickName());
         publishTime.setText(answer.getPublishTime());
         theme.setText(answer.getTheme());

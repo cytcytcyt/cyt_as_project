@@ -68,6 +68,11 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
         answer_me.setOnClickListener(this);
         back.setOnClickListener(this);
 
+        initmyThemes(username);
+        myThemesAdapter adapter=new myThemesAdapter(personalActivity.this,R.layout.mywords,privateThemeList);
+        ListView listview = (ListView) findViewById(R.id.privatelist);
+        listview.setAdapter(adapter);
+
         listView.setOnItemClickListener(this);
 
     }
@@ -200,7 +205,10 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
                         }
                         Answer one = new Answer(photo,publisher,publishTime,theme,answer);
                         privateAnswerList.add(one);
+
+
                     }while (cursor1.moveToNext());
+
                 }
 
             }while(cursor.moveToNext());

@@ -3,11 +3,11 @@
     <!-- rectangle表示为矩形 -->
 
     <!-- 填充的颜色 -->
-    <solid android:color="#799EE1FF" />
+    <solid android:color="#9EE1FF" />
 
     <!-- 边框的颜色和粗细 -->
     <stroke
-        android:width="2dp"
+        android:width="3dp"
         android:color="#589ED6"
         />
 

@@ -47,8 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:textColor="#673AB7"
         android:textSize="30sp"
         android:text="主题"
         android:textStyle="bold"/>
@@ -61,6 +61,7 @@
 
         <ImageView
             android:id="@+id/touXiang"
+            android:paddingLeft="5dp"
             android:background="#00000000"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -71,17 +72,17 @@
             android:orientation="vertical">
             <TextView
                 android:id="@+id/nickName"
-                android:background="#FFEB3B"
+                android:paddingLeft="5dp"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:text="姓名"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/publishTime"
-                android:background="#2196F3"
+                android:paddingLeft="5dp"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:text="时间"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -94,8 +95,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:textColor="#000000"
+        android:paddingLeft="5dp"
+    android:textColor="#3F51B5"
     android:textSize="30sp"
     android:text="内容1"
     android:textStyle="normal"/>
@@ -105,28 +106,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!--            android:onClick="onClick"-->
+        <!--            -->
         <ImageButton
             android:id="@+id/thumbUp"
+            android:onClick="onClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:background="#00000000"
             android:scaleType="fitCenter"
             android:src="@drawable/dianzan" />
         <TextView
             android:id="@+id/thumbUpNum"
-            android:background="#47B9C8"
+            android:background="@drawable/dialog"
+            android:gravity="center"
             android:textSize="17sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"/>
-<!--        android:onClick="onClick"-->
+        <!--        android:onClick="onClick"-->
         <ImageButton
             android:id="@+id/answer"
-
+            android:onClick="onClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -136,16 +139,17 @@
             android:src="@drawable/huifu" />
         <TextView
             android:id="@+id/answerNum"
-            android:background="#9C27B0"
+            android:background="@drawable/dialog"
+            android:gravity="center"
             android:textSize="17sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"/>
-<!--        android:onClick="onClick"-->
+        <!--        android:onClick="onClick"-->
         <ImageButton
             android:id="@+id/send"
-
+            android:onClick="onClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -155,8 +159,10 @@
             android:src="@drawable/zhuanfa" />
         <TextView
             android:id="@+id/zhuanNum"
-            android:background="#673AB7"
+            android:background="@drawable/dialog"
             android:textSize="17sp"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

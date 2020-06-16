@@ -31,7 +31,7 @@ public class AnswerOrderHelper {
                     publisher = cursor2.getString(0);
                 }
 
-                Answer one = new Answer(R.drawable.huifu, publisher, publishTime, content, thumbUpNum);
+                Answer one = new Answer(R.drawable.photo, publisher, publishTime, content, thumbUpNum);
                 answerList.add(one);
             }while(cursor1.moveToNext());
             }
@@ -61,7 +61,7 @@ public class AnswerOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
@@ -90,7 +90,7 @@ public class AnswerOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
@@ -119,7 +119,7 @@ public class AnswerOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{

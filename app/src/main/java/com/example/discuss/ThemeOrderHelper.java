@@ -32,7 +32,7 @@ public class ThemeOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
@@ -61,7 +61,7 @@ public class ThemeOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
@@ -90,7 +90,7 @@ public class ThemeOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
@@ -119,7 +119,7 @@ public class ThemeOrderHelper {
                     publisher = cursor1.getString(0);
                 }
 
-                Theme one = new Theme(R.drawable.huifu, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
                 themeList.add(one);
             }while(cursor.moveToNext());
         }else{
