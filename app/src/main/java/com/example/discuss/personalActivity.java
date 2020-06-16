@@ -198,10 +198,9 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
                            photo=cursor2.getInt(0);
                            publisher=cursor2.getString(1);
                         }
+                        Answer one = new Answer(photo,publisher,publishTime,theme,answer);
+                        privateAnswerList.add(one);
                     }while (cursor1.moveToNext());
-
-                    Answer one = new Answer(photo,publisher,publishTime,theme,answer);
-                    privateAnswerList.add(one);
                 }
 
             }while(cursor.moveToNext());
