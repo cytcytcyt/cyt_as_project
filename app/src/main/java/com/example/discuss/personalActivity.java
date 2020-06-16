@@ -2,6 +2,7 @@ package com.example.discuss;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -24,7 +26,7 @@ import java.util.List;
 public class personalActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private Intent intent;
     private Bundle bundle;
-
+    private int num;
     private ImageButton back;
 
 
@@ -42,6 +44,7 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
     private myThemesAdapter adapter;
     private ListView listView;
     private String privatetheme;
+    private AnswerDialog answerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,7 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
         listView.setOnItemClickListener(this);
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -123,7 +127,61 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
             intent.putExtras(bundle);
             startActivity(intent);
             //modifyTheme();
+        } else if(v.getId()==R.id.answer) {
+//                System.out.println("回答");
+            //final String theme=v.getTag().toString();
+            final String theme="标题1";
+            answerDialog=new AnswerDialog(this,new AnswerDialog.LeaveMyDialogListener() {
+                @Override
+                public void onClick(View view) {
+                    switch(view.getId()){
+                        case R.id.publish_answer:
+                            answerTheme(theme);
+                            System.out.println("回答 theme:"+theme);
+                            break;
+                        case R.id.publish_cancel:
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+            answerDialog.setCancelable(true);
+            answerDialog.show();
+
+
+//                System.out.println("回答 theme:"+theme);
         }
+    }
+
+    public void updateTheme(String theme,String col){
+        MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        SQLiteDatabase myDatabase = mySQLiteOpenHelper.getWritableDatabase();
+        String sql="update themes set "+col+"="+col+"+1 where Theme=\""+theme+"\"";
+        System.out.println("sql="+sql);
+        myDatabase.execSQL(sql);
+    }
+
+    public void answerTheme(String theme) {
+        EditText answer = (EditText) answerDialog.findViewById(R.id.et_answer);
+        int themeId = -1;
+        MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(personalActivity.this);
+        SQLiteDatabase myDatabase = mySQLiteOpenHelper.getWritableDatabase();
+        Cursor cursor = myDatabase.query("themes", new String[]{"Id"}, "Theme=?", new String[]{theme}, null, null, null, null);
+        if (cursor.moveToFirst())
+            themeId = cursor.getInt(0);
+        ContentValues values = new ContentValues();
+        values.put("ThemeId", themeId);
+        values.put("Content", answer.getText().toString());
+        bundle=getIntent().getExtras();
+        values.put("Publisher", bundle.getString("username"));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");//获取当前时间
+        Date date = new Date(System.currentTimeMillis());
+        values.put("PublishTime", simpleDateFormat.format(date));
+        values.put("ThumbUpNum", 0);
+        values.put("IsTeacher", 0);
+        myDatabase.insert("answers", null, values);
+        answerDialog.dismiss();
     }
 
     public void initmyThemes(String username) {
@@ -194,7 +252,6 @@ public class personalActivity extends AppCompatActivity implements View.OnClickL
                 Cursor cursor1 = myDatabase.query("answers", new String[]{"Content","Publisher","PublishTime"}, "ThemeId=?", new String[]{String.valueOf(themeId)}, null, null, null, null);
                 if (cursor1.moveToFirst()) {
                     do{
-
                         answer= cursor1.getString(0);
                         publisherNumber = cursor1.getString(1);
                         publishTime = cursor1.getString(2);
