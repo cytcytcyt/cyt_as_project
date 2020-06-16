@@ -1,6 +1,8 @@
 package com.example.discuss;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -25,8 +27,10 @@ public class AnswerDialog extends android.app.Dialog implements android.view.Vie
     public AnswerDialog(@NonNull Context context,LeaveMyDialogListener listener) {
         super(context);
         setContentView(R.layout.activity_answer_chief);
+        Window window = this.getWindow();
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        //window.getDecorView().setBackgroundResource(android.R.color.transparent);
         this.listener=listener;
-        Window window = getWindow();
         WindowManager.LayoutParams params = window.getAttributes();
         params.gravity = Gravity.CENTER;
         window.setAttributes(params);
