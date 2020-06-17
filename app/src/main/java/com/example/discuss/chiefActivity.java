@@ -3,22 +3,16 @@ package com.example.discuss;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Base64;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,13 +21,10 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class chiefActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,View.OnClickListener,AdapterView.OnItemSelectedListener {
     private ImageButton grzx;
@@ -55,6 +46,10 @@ private int num;
     @RequiresApi(api = Build.VERSION_CODES.O)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        create();
+    }
+
+    void create() {
         setContentView(R.layout.activity_chief);
 
         grzx=(ImageButton)findViewById(R.id.grzx);
@@ -75,33 +70,8 @@ private int num;
             @Override
             public void afterTextChanged(Editable s) {
                 System.out.println("S:"+s.toString());
-                themeList.clear();
-                MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(chiefActivity.this);
-                SQLiteDatabase myDatabase = mySQLiteOpenHelper.getWritableDatabase();
-                Cursor cursor=myDatabase.query("themes",null,"Theme like ?", new String[]{"%"+s.toString()+"%"}, null, null, null, null);
-                if(cursor.moveToFirst()) {
+                changeList(s);
 
-                    do {
-                        String theme = cursor.getString(1);
-                        String content=cursor.getString(2);
-                        String publisher = cursor.getString(3);
-                        String publishTime = cursor.getString(4);
-                        int answerNum = cursor.getInt(5);
-                        int thumbUpNum = cursor.getInt(6);
-                        int zhuanNum = cursor.getInt(7);
-                        //根据themes中publisher（学号）查学生姓名
-                        Cursor cursor1 = myDatabase.query("stuInformation", new String[]{"Name"}, "Number=?", new String[]{publisher}, null, null, null, null);
-                        if (cursor1.moveToFirst()) {
-                            publisher = cursor1.getString(0);
-                        }
-
-                        Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
-                        themeList.add(one);
-                    }while(cursor.moveToNext());
-                }else{
-                    Toast.makeText(chiefActivity.this,"无相关搜索",Toast.LENGTH_LONG).show();
-                }
-                putAdapterInList();
             }
         });
 //        thumbUpNum=(TextView)findViewById(R.id.thumbUpNum);
@@ -124,6 +94,37 @@ private int num;
 
         listView.setOnItemClickListener(this);
         order.setOnItemSelectedListener(this);
+    }
+
+    void changeList(Editable s) {
+        themeList.clear();
+        MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(chiefActivity.this);
+        SQLiteDatabase myDatabase = mySQLiteOpenHelper.getWritableDatabase();
+        Cursor cursor=myDatabase.query("themes",null,"Theme like ?", new String[]{"%"+s.toString()+"%"}, null, null, null, null);
+        if(cursor.moveToFirst()) {
+
+            do {
+                String theme = cursor.getString(1);
+                String content=cursor.getString(2);
+                String publisher = cursor.getString(3);
+                String publishTime = cursor.getString(4);
+                int answerNum = cursor.getInt(5);
+                int thumbUpNum = cursor.getInt(6);
+                int zhuanNum = cursor.getInt(7);
+                //根据themes中publisher（学号）查学生姓名
+                Cursor cursor1 = myDatabase.query("stuInformation", new String[]{"Name"}, "Number=?", new String[]{publisher}, null, null, null, null);
+                if (cursor1.moveToFirst()) {
+                    publisher = cursor1.getString(0);
+                }
+
+                Theme one = new Theme(R.drawable.photo, publisher, publishTime, theme, thumbUpNum, answerNum, zhuanNum);
+                themeList.add(one);
+            }while(cursor.moveToNext());
+        }else{
+            Toast.makeText(chiefActivity.this,"无相关搜索",Toast.LENGTH_LONG).show();
+        }
+        putAdapterInList();
+
     }
 
     //切换主题排列顺序
@@ -247,7 +248,9 @@ private int num;
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        create();
+        themeList.clear();
+        themeOrderHelper.initThemes(this,themeList);
         Theme chooseTheme=themeList.get(position);
         theme=chooseTheme.getTheme();
 
