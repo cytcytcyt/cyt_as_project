@@ -61,7 +61,7 @@
             android:layout_weight="2"
             android:orientation="vertical">
         <ImageButton
-            android:id="@+id/thumbUp"
+            android:id="@+id/thumbUpAnswer"
             android:onClick="onClick"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -69,7 +69,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/dianzan" />
             <TextView
-                android:id="@+id/thumbUpNum"
+                android:id="@+id/thumbUpNumAnswer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"

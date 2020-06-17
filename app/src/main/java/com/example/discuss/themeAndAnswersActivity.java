@@ -88,6 +88,14 @@ public class themeAndAnswersActivity extends AppCompatActivity implements View.O
                 intent.putExtras(bundle);
                 startActivity(intent);
                 break;
+            case R.id.thumbUpAnswer:
+                int num =0;
+                System.out.println("我点啦！！！");
+                TextView thumbUpNum=(TextView)findViewById(R.id.thumbUpNumAnswer);
+                num=Integer.parseInt(thumbUpNum.getText().toString());
+                num++;
+                thumbUpNum.setText(String.valueOf(num));
+                break;
             default: break;
         }
     }

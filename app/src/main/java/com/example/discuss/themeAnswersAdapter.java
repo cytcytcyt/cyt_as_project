@@ -31,12 +31,12 @@ public class themeAnswersAdapter extends ArrayAdapter<Answer> {
         TextView nickName=(TextView) view.findViewById(R.id.nickName);
         TextView publishTime=(TextView) view.findViewById(R.id.publishTime);
         TextView answerContent=(TextView) view.findViewById(R.id.answerContent);
-        TextView thumbUpNum=(TextView) view.findViewById(R.id.thumbUpNum);
+        TextView thumbUpNumAnswer=(TextView) view.findViewById(R.id.thumbUpNumAnswer);
         touxiang.setImageResource(answer.getPhoto());
         nickName.setText(answer.getNickName());
         publishTime.setText(answer.getPublishTime());
         answerContent.setText(answer.getContent());
-        thumbUpNum.setText(String.valueOf(answer.getThumbUpNum()));
+        thumbUpNumAnswer.setText(String.valueOf(answer.getThumbUpNum()));
 
         return view;
     }
